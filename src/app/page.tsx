@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <Hero onGetStarted={handleGetStarted} />
+      <Hero />
       <SolutionsSection onViewCourse={handleViewCourse} />
       <SkillsSection onGetStarted={handleGetStarted} />
       <StatsSection />

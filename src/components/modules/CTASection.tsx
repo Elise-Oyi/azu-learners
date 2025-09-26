@@ -25,7 +25,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
           {/* Headline */}
           <div className="space-y-4">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              It's time to start investing in yourself
+              It&apos;s time to start investing in yourself
             </h2>
             <p className="text-lg md:text-xl text-primary-100 leading-relaxed max-w-2xl mx-auto">
               Online courses were the opportunity to learn from anyone, regardless of their scheduling or 

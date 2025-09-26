@@ -6,11 +6,10 @@ import Link from "next/link"
 import { Button } from "@/components/ui/Button"
 import { ArrowRight, Play } from "lucide-react"
 
-interface HeroProps {
-  onGetStarted?: () => void
-}
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+interface HeroProps {}
 
-export const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
+export const Hero: React.FC<HeroProps> = () => {
   return (
     <section className="relative bg-gradient-to-br from-primary-50 to-primary-100 overflow-hidden">
       <div className="container">
@@ -26,7 +25,7 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
               </h1>
               <p className="text-lg md:text-xl text-neutral-600 leading-relaxed max-w-2xl">
                 Join thousands of learners gaining real-world skills and advancing their careers. Our 
-                expert-led courses are designed to get you job-ready in today's competitive market.
+                expert-led courses are designed to get you job-ready in today&apos;s competitive market.
               </p>
             </div>
 

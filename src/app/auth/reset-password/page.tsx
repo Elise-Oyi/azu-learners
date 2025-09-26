@@ -80,7 +80,7 @@ export default function ResetPasswordPage() {
                   Check your email
                 </h1>
                 <p className="text-neutral-600 mb-4">
-                  We've sent password reset instructions to
+                  We&apos;ve sent password reset instructions to
                 </p>
                 <p className="text-primary-600 font-semibold mb-6">
                   {email}
@@ -127,10 +127,10 @@ export default function ResetPasswordPage() {
                   <Mail className="w-5 h-5 text-warning-600 mt-0.5 flex-shrink-0" />
                   <div>
                     <h3 className="text-sm font-medium text-warning-800 mb-1">
-                      Didn't receive the email?
+                      Didn&apos;t receive the email?
                     </h3>
                     <p className="text-xs text-warning-700">
-                      Check your spam folder or contact support if you don't receive the email within 5 minutes.
+                      Check your spam folder or contact support if you don&apos;t receive the email within 5 minutes.
                     </p>
                   </div>
                 </div>
@@ -174,7 +174,7 @@ export default function ResetPasswordPage() {
                 Reset your password
               </h1>
               <p className="text-neutral-600">
-                Enter your email address and we'll send you a link to reset your password
+                Enter your email address and we&apos;ll send you a link to reset your password
               </p>
             </div>
 
@@ -190,7 +190,7 @@ export default function ResetPasswordPage() {
                   type="email"
                   placeholder="Enter your email address"
                   leftIcon={<Mail className="w-5 h-5" />}
-                  error={!!errors.email}
+                  error={errors.email?.message}
                   {...register("email")}
                 />
                 {errors.email && (
@@ -224,7 +224,7 @@ export default function ResetPasswordPage() {
               </div>
 
               <div className="text-neutral-600 text-sm">
-                Don't have an account?{" "}
+                Don&apos;t have an account?{" "}
                 <Link
                   href="/auth/signup"
                   className="text-primary-600 hover:text-primary-700 font-semibold"
@@ -243,7 +243,7 @@ export default function ResetPasswordPage() {
             <div>
               <h3 className="text-sm font-medium text-neutral-700 mb-1">Security Note</h3>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                For your security, password reset links expire after 1 hour. If you don't receive an email, 
+                For your security, password reset links expire after 1 hour. If you don&apos;t receive an email, 
                 check your spam folder or ensure you entered the correct email address.
               </p>
             </div>

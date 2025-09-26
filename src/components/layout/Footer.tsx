@@ -1,7 +1,7 @@
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react"
+import { Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react"
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear()

@@ -4,7 +4,6 @@ import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { BarChart3, Settings, FileText, ChevronDown, Eye } from "lucide-react"
-import { Button } from "@/components/ui/Button"
 import { Card, CardContent } from "@/components/ui/Card"
 import { Badge } from "@/components/ui/Badge"
 
@@ -41,7 +40,7 @@ const invoices: Invoice[] = [
 ]
 
 export default function InvoicesPage() {
-  const [activeTab, setActiveTab] = React.useState<'dashboard' | 'settings' | 'invoices'>('invoices')
+  const [, setActiveTab] = React.useState<'dashboard' | 'settings' | 'invoices'>('invoices')
   const [isUserMenuOpen, setIsUserMenuOpen] = React.useState(false)
 
   // Mock user data

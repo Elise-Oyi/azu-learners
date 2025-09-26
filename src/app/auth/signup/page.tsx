@@ -6,10 +6,9 @@ import Image from "next/image"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
-import { Eye, EyeOff, Mail, Lock, User, ArrowLeft } from "lucide-react"
+import { Eye, EyeOff, Mail, Lock, User } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 import { Input } from "@/components/ui/Input"
-import { Card, CardContent } from "@/components/ui/Card"
 
 // Validation schema
 const signupSchema = z.object({
@@ -170,7 +169,7 @@ export default function SignupPage() {
                 type="text"
                 placeholder="First name"
                 leftIcon={<User className="w-5 h-5" />}
-                error={!!errors.firstName}
+                error={errors.firstName?.message}
                 className="h-12"
                 {...register("firstName")}
               />
@@ -186,7 +185,7 @@ export default function SignupPage() {
                 type="text"
                 placeholder="Last name"
                 leftIcon={<User className="w-5 h-5" />}
-                error={!!errors.lastName}
+                error={errors.lastName?.message}
                 className="h-12"
                 {...register("lastName")}
               />
@@ -202,7 +201,7 @@ export default function SignupPage() {
                 type="email"
                 placeholder="Email"
                 leftIcon={<Mail className="w-5 h-5" />}
-                error={!!errors.email}
+                error={errors.email?.message}
                 className="h-12"
                 {...register("email")}
               />
@@ -231,7 +230,7 @@ export default function SignupPage() {
                     )}
                   </button>
                 }
-                error={!!errors.password}
+                error={errors.password?.message}
                 className="h-12"
                 {...register("password")}
               />
@@ -260,7 +259,7 @@ export default function SignupPage() {
                     )}
                   </button>
                 }
-                error={!!errors.confirmPassword}
+                error={errors.confirmPassword?.message}
                 className="h-12"
                 {...register("confirmPassword")}
               />
@@ -289,7 +288,7 @@ export default function SignupPage() {
                     )}
                   </button>
                 }
-                error={!!errors.confirmPassword}
+                error={errors.confirmPassword?.message}
                 className="h-12"
                 {...register("confirmPassword")}
               />

@@ -31,7 +31,7 @@ type ProfileFormData = z.infer<typeof profileSchema>
 type PasswordFormData = z.infer<typeof passwordSchema>
 
 export default function SettingsPage() {
-  const [activeTab, setActiveTab] = React.useState<'dashboard' | 'settings' | 'invoices'>('settings')
+  const [, setActiveTab] = React.useState<'dashboard' | 'settings' | 'invoices'>('settings')
   const [isUserMenuOpen, setIsUserMenuOpen] = React.useState(false)
   const [isSavingProfile, setIsSavingProfile] = React.useState(false)
   const [isSavingPassword, setIsSavingPassword] = React.useState(false)
@@ -245,7 +245,7 @@ export default function SettingsPage() {
                         type="text"
                         placeholder="First name"
                         leftIcon={<User className="w-5 h-5" />}
-                        error={!!profileErrors.firstName}
+                        error={profileErrors.firstName?.message}
                         className="h-12 bg-neutral-50 border-neutral-200"
                         {...registerProfile("firstName")}
                       />
@@ -260,7 +260,7 @@ export default function SettingsPage() {
                         type="text"
                         placeholder="Last name"
                         leftIcon={<User className="w-5 h-5" />}
-                        error={!!profileErrors.lastName}
+                        error={profileErrors.lastName?.message}
                         className="h-12 bg-neutral-50 border-neutral-200"
                         {...registerProfile("lastName")}
                       />
@@ -275,7 +275,7 @@ export default function SettingsPage() {
                         type="tel"
                         placeholder="Phone"
                         leftIcon={<Phone className="w-5 h-5" />}
-                        error={!!profileErrors.phone}
+                        error={profileErrors.phone?.message}
                         className="h-12 bg-neutral-50 border-neutral-200"
                         {...registerProfile("phone")}
                       />
@@ -290,7 +290,7 @@ export default function SettingsPage() {
                         type="text"
                         placeholder="Location"
                         leftIcon={<MapPin className="w-5 h-5" />}
-                        error={!!profileErrors.location}
+                        error={profileErrors.location?.message}
                         className="h-12 bg-neutral-50 border-neutral-200"
                         {...registerProfile("location")}
                       />
@@ -318,7 +318,7 @@ export default function SettingsPage() {
                         type="password"
                         placeholder="New password"
                         leftIcon={<Lock className="w-5 h-5" />}
-                        error={!!passwordErrors.newPassword}
+                        error={passwordErrors.newPassword?.message}
                         className="h-12 bg-neutral-50 border-neutral-200"
                         {...registerPassword("newPassword")}
                       />
@@ -333,7 +333,7 @@ export default function SettingsPage() {
                         type="password"
                         placeholder="Confirm password"
                         leftIcon={<Lock className="w-5 h-5" />}
-                        error={!!passwordErrors.confirmPassword}
+                        error={passwordErrors.confirmPassword?.message}
                         className="h-12 bg-neutral-50 border-neutral-200"
                         {...registerPassword("confirmPassword")}
                       />

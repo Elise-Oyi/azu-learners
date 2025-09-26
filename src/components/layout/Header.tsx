@@ -3,18 +3,9 @@
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Menu, X, ChevronDown, User } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 import { Avatar } from "@/components/ui/Avatar"
-import { 
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@radix-ui/react-dropdown-menu"
-import { cn } from "@/lib/utils"
 
 interface HeaderProps {
   user?: {

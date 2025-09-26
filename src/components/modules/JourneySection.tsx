@@ -57,7 +57,7 @@ export const JourneySection: React.FC = () => {
             Your Learning Journey
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            From enrollment to certification, we'll guide you through every step of your learning journey.
+            From enrollment to certification, we&apos;ll guide you through every step of your learning journey.
           </p>
         </div>
 

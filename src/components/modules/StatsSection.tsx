@@ -49,7 +49,7 @@ export const StatsSection: React.FC = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-          {stats.map((stat, index) => (
+          {stats.map((stat) => (
             <div 
               key={stat.id}
               className="text-center group"

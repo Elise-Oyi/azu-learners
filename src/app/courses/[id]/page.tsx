@@ -105,7 +105,7 @@ export default function CourseDetailPage({ params }: CourseDetailPageProps) {
             {/* What you'll learn */}
             <section>
               <h2 className="text-2xl font-bold text-neutral-900 mb-6">
-                What you'll learn
+                What you&apos;ll learn
               </h2>
               <div className="space-y-4">
                 {course.learningOutcomes.map((outcome, index) => (

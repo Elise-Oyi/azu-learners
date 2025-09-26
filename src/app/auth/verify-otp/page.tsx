@@ -29,8 +29,7 @@ export default function VerifyOTPPage() {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
-    setValue
+    watch
   } = useForm<OTPFormData>({
     resolver: zodResolver(otpSchema)
   })
@@ -77,14 +76,6 @@ export default function VerifyOTPPage() {
     }
   }
 
-  // Auto-focus and move to next input
-  const handleOTPChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value
-    if (value.length <= 6) {
-      setValue('otp', value)
-    }
-  }
-
   const otpValue = watch('otp') || ''
 
   return (
@@ -126,7 +117,7 @@ export default function VerifyOTPPage() {
                 Verify your email
               </h1>
               <p className="text-neutral-600 mb-4">
-                We've sent a 6-digit verification code to
+                We&apos;ve sent a 6-digit verification code to
               </p>
               <p className="text-primary-600 font-semibold">
                 {email}
@@ -147,9 +138,7 @@ export default function VerifyOTPPage() {
                     type="text"
                     placeholder="000000"
                     maxLength={6}
-                    value={otpValue}
-                    onChange={handleOTPChange}
-                    error={!!errors.otp}
+                    error={errors.otp?.message}
                     className="text-center text-2xl font-mono tracking-[0.5em] w-48"
                     {...register("otp")}
                   />
@@ -176,7 +165,7 @@ export default function VerifyOTPPage() {
             {/* Resend Section */}
             <div className="mt-8 text-center space-y-4">
               <p className="text-neutral-600 text-sm">
-                Didn't receive the code?
+                Didn&apos;t receive the code?
               </p>
               
               {!canResend ? (

@@ -160,7 +160,7 @@ export default function LoginPage() {
                 type="email"
                 placeholder="Email"
                 leftIcon={<Mail className="w-5 h-5" />}
-                error={!!errors.email}
+                error={errors.email?.message}
                 className="h-12"
                 {...register("email")}
               />
@@ -189,7 +189,7 @@ export default function LoginPage() {
                     )}
                   </button>
                 }
-                error={!!errors.password}
+                error={errors.password?.message}
                 className="h-12"
                 {...register("password")}
               />

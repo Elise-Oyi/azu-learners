@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from "react"
+import { Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -25,7 +26,7 @@ const checkoutSchema = z.object({
 
 type CheckoutFormData = z.infer<typeof checkoutSchema>
 
-export default function CheckoutPage() {
+function CheckoutContent() {
   const searchParams = useSearchParams()
   const courseId = searchParams.get('courseId')
   const course = courseId ? getCourseById(courseId) : null
@@ -102,7 +103,7 @@ export default function CheckoutPage() {
                       type="text"
                       placeholder="John Doe"
                       leftIcon={<User className="w-5 h-5" />}
-                      error={!!errors.fullName}
+                      error={errors.fullName?.message}
                       className="h-12 bg-neutral-50 border-neutral-200"
                       {...register("fullName")}
                     />
@@ -117,7 +118,7 @@ export default function CheckoutPage() {
                       type="email"
                       placeholder="johndoe@gmail.com"
                       leftIcon={<Mail className="w-5 h-5" />}
-                      error={!!errors.email}
+                      error={errors.email?.message}
                       className="h-12 bg-neutral-50 border-neutral-200"
                       {...register("email")}
                     />
@@ -165,7 +166,7 @@ export default function CheckoutPage() {
                       type="tel"
                       placeholder="Phone"
                       leftIcon={<Phone className="w-5 h-5" />}
-                      error={!!errors.phone}
+                      error={errors.phone?.message}
                       className="h-12 bg-neutral-50 border-neutral-200"
                       {...register("phone")}
                     />
@@ -180,7 +181,7 @@ export default function CheckoutPage() {
                       type="text"
                       placeholder="Location"
                       leftIcon={<MapPin className="w-5 h-5" />}
-                      error={!!errors.location}
+                      error={errors.location?.message}
                       className="h-12 bg-neutral-50 border-neutral-200"
                       {...register("location")}
                     />
@@ -250,5 +251,13 @@ export default function CheckoutPage() {
         </div>
       </section>
     </Layout>
+  )
+}
+
+export default function CheckoutPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CheckoutContent />
+    </Suspense>
   )
 }

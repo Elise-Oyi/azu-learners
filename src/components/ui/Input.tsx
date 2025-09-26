@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 import { inputVariants } from "@/lib/variants"
 
 export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement>,
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
     VariantProps<typeof inputVariants> {
   label?: string
   error?: string

@@ -3,9 +3,7 @@
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { BarChart3, Settings, FileText, ChevronDown, User } from "lucide-react"
-import { Layout } from "@/components/layout"
-import { Button } from "@/components/ui/Button"
+import { BarChart3, Settings, FileText, ChevronDown } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/Card"
 import { Badge } from "@/components/ui/Badge"
 
