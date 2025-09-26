@@ -9,16 +9,17 @@ import {
   CTASection, 
   JourneySection 
 } from "@/components/modules"
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+  const router = useRouter()
+
   const handleGetStarted = () => {
-    // Navigate to signup or courses
-    console.log('Get started clicked')
+    router.push('/auth/signup')
   }
 
   const handleViewCourse = (solutionId: string) => {
-    // Navigate to specific course
-    console.log('View course:', solutionId)
+    router.push(`/courses/${solutionId}`)
   }
 
   return (
