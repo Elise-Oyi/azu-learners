@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Home() {
   return (
     <div className="min-h-screen flex items-center justify-center">
@@ -8,12 +10,12 @@ export default function Home() {
         <p className="text-gray-600 mb-8">
           Your learning journey starts here
         </p>
-        <a 
+        <Link 
           href="/courses" 
           className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
         >
           Explore Courses
-        </a>
+        </Link>
       </div>
     </div>
   )
