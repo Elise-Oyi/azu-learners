@@ -3,7 +3,7 @@
 import * as React from "react"
 import Image from "next/image"
 import { Badge } from "@/components/ui/Badge"
-import { Card, CardContent } from "@/components/ui/Card"
+// import { Card, CardContent } from "@/components/ui/Card"
 import { Calendar } from "lucide-react"
 
 interface Solution {
@@ -54,9 +54,7 @@ interface SolutionsSectionProps {
   onViewCourse?: (solutionId: string) => void
 }
 
-export const SolutionsSection: React.FC<SolutionsSectionProps> = ({ 
-  onViewCourse 
-}) => {
+export const SolutionsSection: React.FC<SolutionsSectionProps> = () => {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container">

@@ -2,15 +2,13 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { Button } from "@/components/ui/Button"
+// import { Button } from "@/components/ui/Button"
 
 interface SkillsSectionProps {
   onGetStarted?: () => void
 }
 
-export const SkillsSection: React.FC<SkillsSectionProps> = ({ 
-  onGetStarted 
-}) => {
+export const SkillsSection: React.FC<SkillsSectionProps> = () => {
   return (
     <section className="py-16 md:py-24 bg-primary-800 text-white relative overflow-hidden">
       <div className="container">
@@ -41,7 +39,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({
                 { name: 'Python', color: 'border-blue-400' },
                 { name: 'Excel', color: 'border-green-500' },
                 { name: 'Tableau', color: 'border-orange-500' }
-              ].map((tech, index) => (
+              ].map((tech) => (
                 <div
                   key={tech.name}
                   className={`px-2 py-3 text-sm font-medium text-center text-white border ${tech.color} min-h-[44px] flex items-center justify-center rounded-md`}

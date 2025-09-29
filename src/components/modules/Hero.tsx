@@ -31,7 +31,7 @@ export const Hero: React.FC<HeroProps> = () => {
               Unlock Your Potential with Industry-Leading Courses!
             </h1>
             <p className="text-lg text-white/90 mb-8 leading-relaxed">
-              "Join thousands of learners gaining real-world skills and advancing their careers. Our expert-led courses are designed to empower you to succeed."
+              &ldquo;Join thousands of learners gaining real-world skills and advancing their careers. Our expert-led courses are designed to empower you to succeed.&rdquo;
             </p>
             <Button
               asChild

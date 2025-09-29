@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import { Button } from "@/components/ui/Button"
-import { ArrowRight } from "lucide-react"
 
 interface CTASectionProps {
   onGetStarted?: () => void
