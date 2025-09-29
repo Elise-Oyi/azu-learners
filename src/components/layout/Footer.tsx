@@ -33,10 +33,10 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-primary-800 text-white">
       <div className="container">
-        <div className="py-12 md:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        <div className="py-8 md:py-12">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
             {/* Brand Section */}
-            <div className="space-y-4">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-12">
               <Link href="/" className="inline-block">
                 <Image
                   src="/logo-medium.png"
@@ -46,66 +46,61 @@ export const Footer: React.FC = () => {
                   className="h-10 w-auto brightness-0 invert"
                 />
               </Link>
-              <p className="text-sm text-neutral-300 leading-relaxed max-w-sm">
-                We take pride in our achievements and contribution to excellence, crafting in unleashing innovation, growth, and success.
-              </p>
-            </div>
-
-            {/* Menu Links */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Menu</h3>
-              <nav className="flex flex-col space-y-3">
-                {footerLinks.menu.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-sm text-neutral-300 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-
-            {/* Contact & Social */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Contact</h3>
               
-              {/* Contact Info */}
-              <div className="space-y-3">
-                {footerLinks.contact.map((item) => (
-                  <div key={item.label} className="flex items-start gap-3">
-                    <item.icon className="h-4 w-4 mt-0.5 text-neutral-400" />
-                    {item.isAddress ? (
-                      <span className="text-sm text-neutral-300">{item.label}</span>
-                    ) : (
-                      <a
-                        href={item.href}
-                        className="text-sm text-neutral-300 hover:text-white transition-colors"
-                      >
-                        {item.label}
-                      </a>
-                    )}
-                  </div>
-                ))}
+              {/* Menu Links - Horizontal */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
+                <div>
+                  <h3 className="text-base font-semibold mb-3 lg:mb-0 lg:mr-6">Menu</h3>
+                </div>
+                <nav className="flex flex-col sm:flex-row gap-3 sm:gap-6">
+                  {footerLinks.menu.slice(0, 2).map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="text-sm text-neutral-300 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+            </div>
+
+            {/* Contact & Social - Right Side */}
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-12">
+              {/* Contact */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
+                <div>
+                  <h3 className="text-base font-semibold mb-3 lg:mb-0 lg:mr-6">Contact</h3>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="text-sm text-neutral-300">+23341002000</div>
+                  <div className="text-sm text-neutral-300">New Reiss ,Ghana, Accra</div>
+                </div>
               </div>
 
               {/* Social Links */}
-              <div className="pt-4">
-                <h4 className="text-sm font-medium mb-3">Social</h4>
-                <div className="flex items-center gap-3">
-                  {footerLinks.social.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-md bg-primary-700 hover:bg-primary-600 transition-colors"
-                      aria-label={social.label}
-                    >
-                      <social.icon className="h-5 w-5" />
-                    </a>
-                  ))}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
+                <div>
+                  <h3 className="text-base font-semibold mb-3 lg:mb-0 lg:mr-6">Social</h3>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-neutral-300 hover:text-white transition-colors underline"
+                  >
+                    LinkedIn
+                  </a>
+                  <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-neutral-300 hover:text-white transition-colors underline"
+                  >
+                    Facebook
+                  </a>
                 </div>
               </div>
             </div>
@@ -116,7 +111,7 @@ export const Footer: React.FC = () => {
         <div className="border-t border-primary-700 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-neutral-400">
-              © copyright {currentYear} - G-client, All rights reserved.
+              © copyright {currentYear} - G-client, All rights reserved
             </p>
             <Link 
               href="#top" 

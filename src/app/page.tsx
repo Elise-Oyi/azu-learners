@@ -28,8 +28,8 @@ export default function Home() {
       <SolutionsSection onViewCourse={handleViewCourse} />
       <SkillsSection onGetStarted={handleGetStarted} />
       <StatsSection />
-      <JourneySection />
       <CTASection onGetStarted={handleGetStarted} />
+      <JourneySection />
     </Layout>
   )
 }
