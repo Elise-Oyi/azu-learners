@@ -1,35 +1,20 @@
-'use client'
-
-import { Layout } from "@/components/layout"
-import { 
-  Hero, 
-  SolutionsSection, 
-  SkillsSection, 
-  StatsSection, 
-  CTASection, 
-  JourneySection 
-} from "@/components/modules"
-import { useRouter } from 'next/navigation'
-
 export default function Home() {
-  const router = useRouter()
-
-  const handleGetStarted = () => {
-    router.push('/auth/signup')
-  }
-
-  const handleViewCourse = (solutionId: string) => {
-    router.push(`/courses/${solutionId}`)
-  }
-
   return (
-    <Layout>
-      <Hero />
-      <SolutionsSection onViewCourse={handleViewCourse} />
-      <SkillsSection onGetStarted={handleGetStarted} />
-      <StatsSection />
-      <JourneySection />
-      <CTASection onGetStarted={handleGetStarted} />
-    </Layout>
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          Welcome to Azubi Learners Portal
+        </h1>
+        <p className="text-gray-600 mb-8">
+          Your learning journey starts here
+        </p>
+        <a 
+          href="/courses" 
+          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Explore Courses
+        </a>
+      </div>
+    </div>
   )
 }
