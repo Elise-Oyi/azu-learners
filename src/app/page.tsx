@@ -1,8 +1,35 @@
+'use client'
+
+import { Layout } from "@/components/layout"
+import { 
+  Hero, 
+  SolutionsSection, 
+  SkillsSection, 
+  StatsSection, 
+  CTASection, 
+  JourneySection 
+} from "@/components/modules"
+import { useRouter } from 'next/navigation'
+
 export default function Home() {
+  const router = useRouter()
+
+  const handleGetStarted = () => {
+    router.push('/auth/signup')
+  }
+
+  const handleViewCourse = (solutionId: string) => {
+    router.push(`/courses/${solutionId}`)
+  }
+
   return (
-    <div>
-      <h1>Welcome to Azubi Learners Portal</h1>
-      <p>Your learning journey starts here</p>
-    </div>
+    <Layout>
+      <Hero />
+      <SolutionsSection onViewCourse={handleViewCourse} />
+      <SkillsSection onGetStarted={handleGetStarted} />
+      <StatsSection />
+      <JourneySection />
+      <CTASection onGetStarted={handleGetStarted} />
+    </Layout>
   )
 }
